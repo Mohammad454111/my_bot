@@ -8,3 +8,14 @@ url = f"https://api.telegram.org/bot{TOKEN}/getMe"
 response = requests.get(url)
 
 print(response.json())
+import time
+
+while True:
+    response = requests.get(
+        f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+    )
+
+    data = response.json()
+    print(data)
+
+    time.sleep(2)
